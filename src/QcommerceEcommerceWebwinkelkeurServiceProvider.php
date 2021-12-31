@@ -38,7 +38,7 @@ class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvid
     protected function getPages(): array
     {
         return array_merge(parent::getPages(), [
-            WebwinkelkeurSettingsPage::class
+            WebwinkelkeurSettingsPage::class,
         ]);
     }
 
