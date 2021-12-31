@@ -5,7 +5,6 @@ namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings;
 use Filament\Forms\Components\TextInput;
 use Filament\Pages\Page;
 use Filament\Forms\Components\Tabs;
-use Filament\Forms\Components\Select;
 use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Components\Tabs\Tab;
 use Qubiqx\QcommerceCore\Classes\Sites;
@@ -18,10 +17,7 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
 {
     use InteractsWithForms;
 
-    protected static ?string $navigationIcon = 'heroicon-o-chat-alt-2';
     protected static bool $shouldRegisterNavigation = false;
-    protected static ?string $navigationLabel = 'Webwinkelkeur';
-    protected static ?string $navigationGroup = 'Overige';
     protected static ?string $title = 'Webwinkelkeur';
 
     protected static string $view = 'qcommerce-core::settings.pages.default-settings';
@@ -33,8 +29,8 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
         foreach ($sites as $site) {
             $formData["webwinkelkeur_client_id_{$site['id']}"] = Customsetting::get('webwinkelkeur_client_id', $site['id'], 'same');
             $formData["webwinkelkeur_auth_token_{$site['id']}"] = Customsetting::get('webwinkelkeur_auth_token', $site['id'], 'order');
-            $formData["webwinkelkeur_connected_{$site['id']}"] = Customsetting::get('webwinkelkeur_connected', $site['id'], 1);
-            $formData["webwinkelkeur_connection_error_{$site['id']}"] = Customsetting::get('webwinkelkeur_connection_error', $site['id'], 1);
+            $formData["webwinkelkeur_connected_{$site['id']}"] = Customsetting::get('webwinkelkeur_connected', $site['id'], 0);
+            $formData["webwinkelkeur_connection_error_{$site['id']}"] = Customsetting::get('webwinkelkeur_connection_error', $site['id'], '');
         }
 
         $this->form->fill($formData);
@@ -51,6 +47,13 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
                 Placeholder::make('label')
                     ->label("Webwinkelkeur voor {$site['name']}")
                     ->content('Activeer webwinkelkeur zodat de klanten automatisch een mail krijgen om een review achter te laten.')
+                    ->columnSpan([
+                        'default' => 1,
+                        'lg' => 2,
+                    ]),
+                Placeholder::make('label')
+                    ->label("Webwinkelkeur is " . (!Customsetting::get('webwinkelkeur_connected', $site['id'], 0) ? 'niet' : '') . ' geconnect')
+                    ->content(Customsetting::get('webwinkelkeur_connection_error', $site['id'], ''))
                     ->columnSpan([
                         'default' => 1,
                         'lg' => 2,
@@ -92,5 +95,6 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
         }
 
         $this->notify('success', 'De Webwinkelkeur instellingen zijn opgeslagen');
+        return redirect(WebwinkelkeurSettingsPage::getUrl());
     }
 }

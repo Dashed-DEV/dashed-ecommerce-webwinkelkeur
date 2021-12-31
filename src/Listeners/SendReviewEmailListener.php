@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Listeners;
+namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Listeners;
 
 use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderIsPushableForReviewEvent;
 
@@ -24,6 +24,7 @@ class SendReviewEmailListener
      */
     public function handle(OrderIsPushableForReviewEvent $event)
     {
+        dump($event);
         $event->order->ip = '123.1.2.3';
         $event->order->save();
     }

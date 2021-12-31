@@ -51,7 +51,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\QcommerceEcommerceWebwinkelkeurServiceProvider"
+                "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\QcommerceEcommerceWebwinkelkeurServiceProvider",
+                "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\QcommerceEcommerceWebwinkelkeurEventServiceProvider"
             ],
             "aliases": {
                 "QcommerceEcommerceWebwinkelkeur": "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\Facades\\QcommerceEcommerceWebwinkelkeur"
