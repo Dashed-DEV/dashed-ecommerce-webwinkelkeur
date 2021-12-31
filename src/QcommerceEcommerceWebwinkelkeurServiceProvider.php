@@ -2,9 +2,9 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur;
 
+use Qubiqx\QcommerceEcommerceWebwinkelkeur\Commands\QcommerceEcommerceWebwinkelkeurCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Qubiqx\QcommerceEcommerceWebwinkelkeur\Commands\QcommerceEcommerceWebwinkelkeurCommand;
 
 class QcommerceEcommerceWebwinkelkeurServiceProvider extends PackageServiceProvider
 {
