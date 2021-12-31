@@ -12,14 +12,14 @@ class Webwinkelkeur
 {
     public static function initialize($siteId = null)
     {
-        if (!$siteId) {
+        if (! $siteId) {
             $siteId = Sites::getActive();
         }
 
         $clientId = Customsetting::get('webwinkelkeur_client_id', $siteId);
         $authToken = Customsetting::get('webwinkelkeur_auth_token', $siteId);
 
-        if (!$clientId && !$authToken) {
+        if (! $clientId && ! $authToken) {
             return;
         }
 
@@ -30,13 +30,13 @@ class Webwinkelkeur
 
     public static function isConnected($siteId = null)
     {
-        if (!$siteId) {
+        if (! $siteId) {
             $siteId = Sites::getActive();
         }
 
         $webwinkelKeurClient = self::initialize($siteId);
 
-        if (!$webwinkelKeurClient) {
+        if (! $webwinkelKeurClient) {
             return false;
         }
 
