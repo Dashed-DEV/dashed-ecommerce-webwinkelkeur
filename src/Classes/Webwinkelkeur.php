@@ -12,40 +12,43 @@ class Webwinkelkeur
 {
     public static function initialize($siteId = null)
     {
-        if (!$siteId) {
+        if (! $siteId) {
             $siteId = Sites::getActive();
         }
 
         $clientId = Customsetting::get('webwinkelkeur_client_id', $siteId);
         $authToken = Customsetting::get('webwinkelkeur_auth_token', $siteId);
 
-        if (!$clientId && !$authToken) {
+        if (! $clientId && ! $authToken) {
             return;
         }
 
         $webwinkelKeurClient = new Client($clientId, $authToken);
+
         return $webwinkelKeurClient;
     }
 
     public static function isConnected($siteId = null)
     {
-        if (!$siteId) {
+        if (! $siteId) {
             $siteId = Sites::getActive();
         }
 
         $webwinkelKeurClient = self::initialize($siteId);
 
-        if (!$webwinkelKeurClient) {
+        if (! $webwinkelKeurClient) {
             return false;
         }
 
         try {
             $webshop = $webwinkelKeurClient->getWebshop();
             Customsetting::set('webwinkelkeur_connection_error', null, $siteId);
+
             return true;
         } catch (Client\Exception $e) {
             Customsetting::set('webwinkelkeur_connection_error', $e->getMessage(), $siteId);
             Customsetting::set('webwinkelkeur_connected', false, $siteId);
+
             return false;
         }
     }

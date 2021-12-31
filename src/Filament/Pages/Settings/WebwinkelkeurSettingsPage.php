@@ -2,15 +2,19 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings;
 
-use Filament\Forms\Components\TextInput;
-use Filament\Pages\Page;
-use Filament\Forms\Components\Tabs;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Forms\Components\Tabs\Tab;
-use Qubiqx\QcommerceCore\Classes\Sites;
 use Filament\Forms\Components\Placeholder;
-use Qubiqx\QcommerceCore\Models\Customsetting;
+use Filament\Forms\Components\Tabs;
+<<<<<<< HEAD
+use Filament\Forms\Contracts\HasForms;
+=======
+>>>>>>> c761c240753719387c7809ede37cecb18b38b01d
+use Filament\Forms\Components\Tabs\Tab;
+use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
+use Filament\Pages\Page;
+use Qubiqx\QcommerceCore\Classes\Sites;
+use Qubiqx\QcommerceCore\Models\Customsetting;
 use Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
 
 class WebwinkelkeurSettingsPage extends Page implements HasForms
