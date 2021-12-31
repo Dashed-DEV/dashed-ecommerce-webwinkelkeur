@@ -12,8 +12,6 @@ class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvid
 
     public function configurePackage(Package $package): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
-
         cms()->builder(
             'settingPages',
             array_merge(cms()->builder('settingPages'), [
@@ -30,25 +28,10 @@ class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvid
             ->name('qcommerce-ecommerce-webwinkelkeur');
     }
 
-//    protected function getStyles(): array
-//    {
-//        return array_merge(parent::getStyles(), []);
-//    }
-//
     protected function getPages(): array
     {
         return array_merge(parent::getPages(), [
             WebwinkelkeurSettingsPage::class,
         ]);
     }
-
-//    protected function getResources(): array
-//    {
-//        return array_merge(parent::getResources(), []);
-//    }
-//
-//    protected function getWidgets(): array
-//    {
-//        return array_merge(parent::getWidgets(), []);
-//    }
 }
