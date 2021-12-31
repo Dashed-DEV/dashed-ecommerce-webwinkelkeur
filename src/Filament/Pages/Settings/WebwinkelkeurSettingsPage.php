@@ -4,10 +4,10 @@ namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings;
 
 use Filament\Forms\Components\Placeholder;
 use Filament\Forms\Components\Tabs;
-use Filament\Forms\Contracts\HasForms;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Concerns\InteractsWithForms;
+use Filament\Forms\Contracts\HasForms;
 use Filament\Pages\Page;
 use Qubiqx\QcommerceCore\Classes\Sites;
 use Qubiqx\QcommerceCore\Models\Customsetting;
@@ -52,7 +52,7 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
                         'lg' => 2,
                     ]),
                 Placeholder::make('label')
-                    ->label("Webwinkelkeur is " . (!Customsetting::get('webwinkelkeur_connected', $site['id'], 0) ? 'niet' : '') . ' geconnect')
+                    ->label("Webwinkelkeur is " . (! Customsetting::get('webwinkelkeur_connected', $site['id'], 0) ? 'niet' : '') . ' geconnect')
                     ->content(Customsetting::get('webwinkelkeur_connection_error', $site['id'], ''))
                     ->columnSpan([
                         'default' => 1,
@@ -95,6 +95,7 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
         }
 
         $this->notify('success', 'De Webwinkelkeur instellingen zijn opgeslagen');
+
         return redirect(WebwinkelkeurSettingsPage::getUrl());
     }
 }
