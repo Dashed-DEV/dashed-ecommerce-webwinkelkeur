@@ -2,7 +2,7 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Listeners;
 
-use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderIsPushableForReviewEvent;
+use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 use Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
 
 class SendReviewEmailListener
@@ -23,7 +23,7 @@ class SendReviewEmailListener
      * @param object $event
      * @return void
      */
-    public function handle(OrderIsPushableForReviewEvent $event)
+    public function handle(OrderMarkedAsPaidEvent $event)
     {
         Webwinkelkeur::sendReviewEmail($event->order);
     }
