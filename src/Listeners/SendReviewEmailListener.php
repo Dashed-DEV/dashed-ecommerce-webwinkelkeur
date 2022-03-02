@@ -2,8 +2,8 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Listeners;
 
-use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 use Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
+use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 
 class SendReviewEmailListener
 {
