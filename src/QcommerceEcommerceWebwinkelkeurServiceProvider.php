@@ -3,8 +3,8 @@
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur;
 
 use Filament\PluginServiceProvider;
-use Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
 use Spatie\LaravelPackageTools\Package;
+use Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
 
 class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
 {
