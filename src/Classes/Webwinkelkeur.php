@@ -2,11 +2,11 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes;
 
-use WebwinkelKeur\Client;
-use WebwinkelKeur\Client\Request;
 use Qubiqx\QcommerceCore\Classes\Sites;
 use Qubiqx\QcommerceCore\Models\Customsetting;
 use Qubiqx\QcommerceEcommerceCore\Models\Order;
+use WebwinkelKeur\Client;
+use WebwinkelKeur\Client\Request;
 
 class Webwinkelkeur
 {

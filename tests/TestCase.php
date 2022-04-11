@@ -2,8 +2,8 @@
 
 namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Tests;
 
-use Orchestra\Testbench\TestCase as Orchestra;
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Orchestra\Testbench\TestCase as Orchestra;
 use Qubiqx\QcommerceEcommerceWebwinkelkeur\QcommerceEcommerceWebwinkelkeurServiceProvider;
 
 class TestCase extends Orchestra
