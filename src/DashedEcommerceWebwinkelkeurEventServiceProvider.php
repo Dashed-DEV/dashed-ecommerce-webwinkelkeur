@@ -2,9 +2,9 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
-use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 use Dashed\DashedEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 use Dashed\DashedEcommerceWebwinkelkeur\Listeners\SendReviewEmailListener;
+use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
 
 class DashedEcommerceWebwinkelkeurEventServiceProvider extends ServiceProvider
 {

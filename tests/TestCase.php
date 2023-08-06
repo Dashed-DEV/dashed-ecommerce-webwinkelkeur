@@ -2,9 +2,9 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Tests;
 
+use Dashed\DashedEcommerceWebwinkelkeur\DashedEcommerceWebwinkelkeurServiceProvider;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Dashed\DashedEcommerceWebwinkelkeur\DashedEcommerceWebwinkelkeurServiceProvider;
 
 class TestCase extends Orchestra
 {

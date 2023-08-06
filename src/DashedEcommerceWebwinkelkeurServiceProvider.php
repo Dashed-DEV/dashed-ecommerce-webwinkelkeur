@@ -2,8 +2,8 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
-use Filament\PluginServiceProvider;
 use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
+use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
 
 class DashedEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
