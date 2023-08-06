@@ -1,14 +1,14 @@
 <?php
 
-namespace Qubiqx\QcommerceEcommerceWebwinkelkeur;
+namespace Dashed\DashedEcommerceWebwinkelkeur;
 
 use Filament\PluginServiceProvider;
-use Qubiqx\QcommerceEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
+use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
 use Spatie\LaravelPackageTools\Package;
 
-class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
+class DashedEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
 {
-    public static string $name = 'qcommerce-ecommerce-webwinkelkeur';
+    public static string $name = 'dashed-ecommerce-webwinkelkeur';
 
     public function configurePackage(Package $package): void
     {
@@ -25,7 +25,7 @@ class QcommerceEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvid
         );
 
         $package
-            ->name('qcommerce-ecommerce-webwinkelkeur');
+            ->name('dashed-ecommerce-webwinkelkeur');
     }
 
     protected function getPages(): array

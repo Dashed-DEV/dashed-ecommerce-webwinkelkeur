@@ -1,10 +1,10 @@
 <?php
 
-namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes;
+namespace Dashed\DashedEcommerceWebwinkelkeur\Classes;
 
-use Qubiqx\QcommerceCore\Classes\Sites;
-use Qubiqx\QcommerceCore\Models\Customsetting;
-use Qubiqx\QcommerceEcommerceCore\Models\Order;
+use Dashed\DashedCore\Classes\Sites;
+use Dashed\DashedCore\Models\Customsetting;
+use Dashed\DashedEcommerceCore\Models\Order;
 use WebwinkelKeur\Client;
 use WebwinkelKeur\Client\Request;
 

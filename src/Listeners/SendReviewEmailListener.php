@@ -1,9 +1,9 @@
 <?php
 
-namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Listeners;
+namespace Dashed\DashedEcommerceWebwinkelkeur\Listeners;
 
-use Qubiqx\QcommerceEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
-use Qubiqx\QcommerceEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
+use Dashed\DashedEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
+use Dashed\DashedEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
 
 class SendReviewEmailListener
 {

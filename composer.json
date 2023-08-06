@@ -1,17 +1,17 @@
 {
-    "name": "qubiqx/qcommerce-ecommerce-webwinkelkeur",
-    "description": "This is my package qcommerce-ecommerce-webwinkelkeur",
+    "name": "dashed/dashed-ecommerce-webwinkelkeur",
+    "description": "This is my package dashed-ecommerce-webwinkelkeur",
     "keywords": [
-        "Qubiqx",
+        "Dashed",
         "laravel",
-        "qcommerce-ecommerce-webwinkelkeur"
+        "dashed-ecommerce-webwinkelkeur"
     ],
-    "homepage": "https://github.com/qubiqx/qcommerce-ecommerce-webwinkelkeur",
+    "homepage": "https://github.com/Dashed-DEV/dashed-ecommerce-webwinkelkeur",
     "license": "MIT",
     "authors": [
         {
             "name": "Robin van Maasakker",
-            "email": "robin@qubiqx.com",
+            "email": "robin@dashed.nl",
             "role": "Developer"
         }
     ],
@@ -30,13 +30,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\": "src",
-            "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\Database\\Factories\\": "database/factories"
+            "Dashed\\DashedEcommerceWebwinkelkeur\\": "src",
+            "Dashed\\DashedEcommerceWebwinkelkeur\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\Tests\\": "tests"
+            "Dashed\\DashedEcommerceWebwinkelkeur\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -53,11 +53,11 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\QcommerceEcommerceWebwinkelkeurServiceProvider",
-                "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\QcommerceEcommerceWebwinkelkeurEventServiceProvider"
+                "Dashed\\DashedEcommerceWebwinkelkeur\\DashedEcommerceWebwinkelkeurServiceProvider",
+                "Dashed\\DashedEcommerceWebwinkelkeur\\DashedEcommerceWebwinkelkeurEventServiceProvider"
             ],
             "aliases": {
-                "QcommerceEcommerceWebwinkelkeur": "Qubiqx\\QcommerceEcommerceWebwinkelkeur\\Facades\\QcommerceEcommerceWebwinkelkeur"
+                "DashedEcommerceWebwinkelkeur": "Dashed\\DashedEcommerceWebwinkelkeur\\Facades\\DashedEcommerceWebwinkelkeur"
             }
         }
     },

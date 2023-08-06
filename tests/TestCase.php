@@ -1,10 +1,10 @@
 <?php
 
-namespace Qubiqx\QcommerceEcommerceWebwinkelkeur\Tests;
+namespace Dashed\DashedEcommerceWebwinkelkeur\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Qubiqx\QcommerceEcommerceWebwinkelkeur\QcommerceEcommerceWebwinkelkeurServiceProvider;
+use Dashed\DashedEcommerceWebwinkelkeur\DashedEcommerceWebwinkelkeurServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -13,14 +13,14 @@ class TestCase extends Orchestra
         parent::setUp();
 
         Factory::guessFactoryNamesUsing(
-            fn (string $modelName) => 'Qubiqx\\QcommerceEcommerceWebwinkelkeur\\Database\\Factories\\'.class_basename($modelName).'Factory'
+            fn (string $modelName) => 'Dashed\\DashedEcommerceWebwinkelkeur\\Database\\Factories\\'.class_basename($modelName).'Factory'
         );
     }
 
     protected function getPackageProviders($app)
     {
         return [
-            QcommerceEcommerceWebwinkelkeurServiceProvider::class,
+            DashedEcommerceWebwinkelkeurServiceProvider::class,
         ];
     }
 
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
         config()->set('database.default', 'testing');
 
         /*
-        $migration = include __DIR__.'/../database/migrations/create_qcommerce-ecommerce-webwinkelkeur_table.php.stub';
+        $migration = include __DIR__.'/../database/migrations/create_dashed-ecommerce-webwinkelkeur_table.php.stub';
         $migration->up();
         */
     }
