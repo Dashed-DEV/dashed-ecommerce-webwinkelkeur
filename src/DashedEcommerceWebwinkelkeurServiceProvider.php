@@ -2,11 +2,11 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
-use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
-use Filament\PluginServiceProvider;
 use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
 
-class DashedEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
+class DashedEcommerceWebwinkelkeurServiceProvider extends PackageServiceProvider
 {
     public static string $name = 'dashed-ecommerce-webwinkelkeur';
 
@@ -18,7 +18,7 @@ class DashedEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
                 'webwinkelkeur' => [
                     'name' => 'Webwinkelkeur',
                     'description' => 'Laat je klanten een review schrijven na een bestelling',
-                    'icon' => 'chat-alt-2',
+                    'icon' => 'chat-bubble-left-ellipsis',
                     'page' => WebwinkelkeurSettingsPage::class,
                 ],
             ])
@@ -26,12 +26,5 @@ class DashedEcommerceWebwinkelkeurServiceProvider extends PluginServiceProvider
 
         $package
             ->name('dashed-ecommerce-webwinkelkeur');
-    }
-
-    protected function getPages(): array
-    {
-        return array_merge(parent::getPages(), [
-            WebwinkelkeurSettingsPage::class,
-        ]);
     }
 }
