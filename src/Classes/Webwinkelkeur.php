@@ -2,11 +2,11 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Classes;
 
-use WebwinkelKeur\Client;
-use WebwinkelKeur\Client\Request;
 use Dashed\DashedCore\Classes\Sites;
 use Dashed\DashedCore\Models\Customsetting;
 use Dashed\DashedEcommerceCore\Models\Order;
+use WebwinkelKeur\Client;
+use WebwinkelKeur\Client\Request;
 
 class Webwinkelkeur
 {
