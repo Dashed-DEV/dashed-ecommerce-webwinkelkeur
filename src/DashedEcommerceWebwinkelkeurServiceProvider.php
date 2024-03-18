@@ -2,9 +2,15 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
+<<<<<<< HEAD
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
+=======
+use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
+>>>>>>> filamentv3
 
 class DashedEcommerceWebwinkelkeurServiceProvider extends PackageServiceProvider
 {

@@ -8,9 +8,13 @@ use Dashed\DashedCore\Classes\Sites;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
 use Filament\Notifications\Notification;
+<<<<<<< HEAD
 use Filament\Forms\Components\Placeholder;
 use Dashed\DashedCore\Models\Customsetting;
 use Dashed\DashedEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
+=======
+use Filament\Pages\Page;
+>>>>>>> filamentv3
 
 class WebwinkelkeurSettingsPage extends Page
 {
