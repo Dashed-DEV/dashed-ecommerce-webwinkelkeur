@@ -2,25 +2,23 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings;
 
-use Dashed\DashedCore\Classes\Sites;
-use Dashed\DashedCore\Models\Customsetting;
-use Dashed\DashedEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
-use Filament\Forms\Components\Placeholder;
+use Filament\Pages\Page;
 use Filament\Forms\Components\Tabs;
+use Dashed\DashedCore\Classes\Sites;
 use Filament\Forms\Components\Tabs\Tab;
 use Filament\Forms\Components\TextInput;
-use Filament\Forms\Concerns\InteractsWithForms;
-use Filament\Forms\Contracts\HasForms;
-use Filament\Pages\Page;
+use Filament\Notifications\Notification;
+use Filament\Forms\Components\Placeholder;
+use Dashed\DashedCore\Models\Customsetting;
+use Dashed\DashedEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
 
-class WebwinkelkeurSettingsPage extends Page implements HasForms
+class WebwinkelkeurSettingsPage extends Page
 {
-    use InteractsWithForms;
-
     protected static bool $shouldRegisterNavigation = false;
     protected static ?string $title = 'Webwinkelkeur';
 
     protected static string $view = 'dashed-core::settings.pages.default-settings';
+    public array $data = [];
 
     public function mount(): void
     {
@@ -60,14 +58,10 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
                     ]),
                 TextInput::make("webwinkelkeur_client_id_{$site['id']}")
                     ->label('Webwinkelkeur Client ID')
-                    ->rules([
-                        'max:255',
-                    ]),
+                    ->maxLength(255),
                 TextInput::make("webwinkelkeur_auth_token_{$site['id']}")
                     ->label('Webwinkelkeur Auth Token')
-                    ->rules([
-                        'max:255',
-                    ]),
+                    ->maxLength(255),
             ];
 
             $tabs[] = Tab::make($site['id'])
@@ -84,6 +78,11 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
         return $tabGroups;
     }
 
+    public function getFormStatePath(): ?string
+    {
+        return 'data';
+    }
+
     public function submit()
     {
         $sites = Sites::getSites();
@@ -94,7 +93,10 @@ class WebwinkelkeurSettingsPage extends Page implements HasForms
             Customsetting::set('webwinkelkeur_connected', Webwinkelkeur::isConnected($site['id']), $site['id']);
         }
 
-        $this->notify('success', 'De Webwinkelkeur instellingen zijn opgeslagen');
+        Notification::make()
+            ->title('De Webwinkelkeur instellingen zijn opgeslagen')
+            ->success()
+            ->send();
 
         return redirect(WebwinkelkeurSettingsPage::getUrl());
     }
