@@ -2,8 +2,8 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Listeners;
 
-use Dashed\DashedEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 use Dashed\DashedEcommerceWebwinkelkeur\Classes\Webwinkelkeur;
+use Dashed\DashedEcommerceCore\Events\Orders\OrderMarkedAsPaidEvent;
 
 class SendReviewEmailListener
 {

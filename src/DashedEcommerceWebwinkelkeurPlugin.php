@@ -2,9 +2,9 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
-use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
-use Filament\Contracts\Plugin;
 use Filament\Panel;
+use Filament\Contracts\Plugin;
+use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
 
 class DashedEcommerceWebwinkelkeurPlugin implements Plugin
 {
