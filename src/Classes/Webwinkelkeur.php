@@ -2,6 +2,7 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Classes;
 
+use Dashed\DashedEcommerceCore\Models\OrderLog;
 use WebwinkelKeur\Client;
 use WebwinkelKeur\Client\Request;
 use Dashed\DashedCore\Classes\Sites;
@@ -70,9 +71,9 @@ class Webwinkelkeur
 
             try {
                 $webwinkelKeurClient->sendInvitation($invitation);
-                echo 'Success!';
+                OrderLog::createLog(orderId: $order->id, note: 'Webwinkelkeur uitnodiging verstuurd');
             } catch (Client\Exception $e) {
-                echo $e->getMessage();
+                OrderLog::createLog(orderId: $order->id, note: 'Webwinkelkeur uitnodiging NIET verstuurd');
             }
         }
     }
