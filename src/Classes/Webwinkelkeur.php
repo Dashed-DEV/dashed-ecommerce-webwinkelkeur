@@ -2,12 +2,12 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur\Classes;
 
-use Dashed\DashedEcommerceCore\Models\OrderLog;
 use WebwinkelKeur\Client;
 use WebwinkelKeur\Client\Request;
 use Dashed\DashedCore\Classes\Sites;
 use Dashed\DashedCore\Models\Customsetting;
 use Dashed\DashedEcommerceCore\Models\Order;
+use Dashed\DashedEcommerceCore\Models\OrderLog;
 
 class Webwinkelkeur
 {
