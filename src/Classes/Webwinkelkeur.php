@@ -56,7 +56,7 @@ class Webwinkelkeur
 
     public static function sendReviewEmail(Order $order)
     {
-        if (self::isConnected($order->site_id)) {
+        if (self::isConnected($order->site_id) && $order->email) {
             $webwinkelKeurClient = self::initialize();
             $invitation = new Request\Invitation();
             $invitation
