@@ -2,6 +2,7 @@
 
 namespace Dashed\DashedEcommerceWebwinkelkeur;
 
+use Dashed\DashedCore\DashedCorePlugin;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Dashed\DashedEcommerceWebwinkelkeur\Filament\Pages\Settings\WebwinkelkeurSettingsPage;
@@ -26,5 +27,9 @@ class DashedEcommerceWebwinkelkeurServiceProvider extends PackageServiceProvider
 
         $package
             ->name('dashed-ecommerce-webwinkelkeur');
+
+        cms()->builder('plugins', [
+            new DashedEcommerceWebwinkelkeurPlugin(),
+        ]);
     }
 }
