@@ -12,17 +12,7 @@ class DashedEcommerceWebwinkelkeurServiceProvider extends PackageServiceProvider
 
     public function configurePackage(Package $package): void
     {
-        cms()->builder(
-            'settingPages',
-            array_merge(cms()->builder('settingPages'), [
-                'webwinkelkeur' => [
-                    'name' => 'Webwinkelkeur',
-                    'description' => 'Laat je klanten een review schrijven na een bestelling',
-                    'icon' => 'chat-bubble-left-ellipsis',
-                    'page' => WebwinkelkeurSettingsPage::class,
-                ],
-            ])
-        );
+        cms()->registerSettingsPage(WebwinkelkeurSettingsPage::class, 'Webwinkelkeur', 'chat-bubble-left-ellipsis', 'Koppel Webwinkelkeur');
 
         $package
             ->name('dashed-ecommerce-webwinkelkeur');
